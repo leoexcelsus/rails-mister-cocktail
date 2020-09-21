@@ -1,11 +1,14 @@
 <div class="container">
-  <%= simple_form_for @cocktail do |f| %>
+  <div class="table-div">
+    <%= simple_form_for @cocktail do |f| %>
   <%= f.input :name %>
+   <%= f.input :photo, as: :file %>
   <%= f.submit "Add", class: "btn btn-primary" %>
   <% end %>
+  </div>
 </div>
 
 
 
 
-<%= link_to 'Back to list', cocktails_path %>
+<%= link_to 'Back to list', cocktails_path, class: "btn btn-secondary" %>

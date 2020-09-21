@@ -3,3 +3,23 @@
 @import "cocktails";
 @import "doses";
 @import "ingredients";
+
+#body {
+  background-image: url('https://res.cloudinary.com/dqbtfdnw6/image/upload/v1600716208/szyetvup23wrgxi8j1nf.jpg');
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+}
+
+h1 {
+  color: #d9f8fc;
+  text-shadow: 1px 1px #fffeb8;
+  background-color: black;
+  opacity: 0.7;
+  font-size: 60px;
+  width: 600px;
+  border-radius: 30px;
+  justify-content: center;
+  margin: 0 auto;
+}

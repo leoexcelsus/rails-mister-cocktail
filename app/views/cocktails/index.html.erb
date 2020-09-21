@@ -5,14 +5,18 @@
 <div class="container">
   <div class="flex-div">
     <% @cocktails.each do |c| %>
-      <div class="drink-card">
-        <h5>
-          <%= link_to c[:name], cocktail_path(c[:id]) %>
+      <div>
+        <h5 class= "cocktail-label">
+          <%= c[:name] %>
         </h5>
+        <%= link_to cocktail_path(c[:id]) do %>
+          <div class="cocktail-card" style="background-image: url('<%= cl_image_path c.photo.key %>')">
+          </div>
+        <% end %>
       </div>
     <% end %>
   </div>
 
 </div>
 
-<%= link_to 'Add a new cocktail', new_cocktail_path %>
+<%= link_to 'Add a new cocktail', new_cocktail_path, class: "btn btn-primary" %>

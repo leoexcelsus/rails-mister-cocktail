@@ -11,19 +11,10 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+@import "cocktails";
+@import "doses";
+@import "ingredients";
 
 
 
-#body {
-  background-image: url("andrew-knechel-gG6yehL64fo-unsplash.jpg");
-  background-size: cover;
-  width: 100vw;
-  height: 100vh;
-  text-align: center;
-}
-
-h1 {
-  color: #d9f8fc;
-  text-shadow: 1px 1px #fffeb8;
-}
 
