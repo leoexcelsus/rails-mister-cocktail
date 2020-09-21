@@ -1,0 +1,28 @@
+<h1>Add dose to <%= @cocktail.name %></h1>
+
+<h2>Existing doses</h2>
+<table class="table">
+  <tr>
+    <th>Dose</th>
+    <th>Ingredient</th>
+  </tr>
+  <% @cocktail.doses.each do |dose| %>
+  <tr>
+    <td>
+      <%= dose.description %>
+    </td>
+    <td>
+      <%= dose.ingredient.name %>
+    </td>
+  </tr>
+  <% end %>
+</table>
+
+<div>
+  <%= simple_form_for [@cocktail, @dose] do |f| %>
+  <%= f.input :description %>
+  <%= f.input :ingredient_id, collection: Ingredient.all.order('name ASC') %>
+  <%= f.submit "Add", class: "btn btn-primary" %>
+  <% end %>
+</div>
+<%= link_to "Back to cocktail", cocktail_path(@cocktail) %>

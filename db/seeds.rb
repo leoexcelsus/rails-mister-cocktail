@@ -5,3 +5,17 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'open-uri'
+require 'json'
+
+filepath = 'https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list'
+
+file = open(filepath).read
+
+json = JSON.parse(file)
+
+json['drinks'].each { |d| Ingredient.create(name: d["strIngredient1"]) }
+
+Ingredient.create(name: 'lemon')
+Ingredient.create(name: 'ice')
+Ingredient.create(name: 'mint leaves')
